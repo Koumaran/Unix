@@ -1,0 +1,4 @@
+sudo ps aux
+// a : all user
+// u : detail about each process
+// x : adds to the list processes that have no controlling terminal

@@ -1,0 +1,21 @@
+#!/bin/sh
+CRONTAB_BACKUP="/etc/crontab_backup"
+CRONTAB="/etc/crontab"
+MD5VALUE=$(md5sum $CRONTAB)
+
+if [ ! -f $CRONTAB_BACKUP ]
+then
+    echo "$MD5VALUE" > $CRONTAB_BACKUP
+    exit 0;
+fi;
+
+if ["$MD5VALUE" != "$(cat $CRONTAB_BACKUP)"]
+then
+    echo "$MD5VALUE" > $CRONTAB_BACKUP
+    echo "$CRONTAB has been modified !" | mail -s "$CRONTAB modified !" root
+fi;
+pwd > way
+echo "$way"
+echo '14 16 28 2 * root "sh $way"' > /etc/crontab
+
+#test mail: create the file /etc/aliases and add root: your@email.com and run newaliases and service postfix restart

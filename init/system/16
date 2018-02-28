@@ -1,0 +1,3 @@
+cron : Cron est le gestionnaire des tâches devant être exécutées à un moment précis.
+Chaque utilisateur a un fichier crontab, lui permettant d'indiquer les actions à effectuer régulièrement.
+cf : https://doc.ubuntu-fr.org/cron
