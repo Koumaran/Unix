@@ -1,0 +1,3 @@
+##Faites pointer intra.42.fr sur l’adresse suivante 46.19.122.85.
+##Il suffit d'ajouter dans le fichier /etc/host la ligne suivante:
+echo "46.19.122.85   intra.42.fr" >> /etc/host
